@@ -255,6 +255,28 @@ main { position: relative; z-index: 1; }
 .inline-link { font-weight: 700; color: var(--accent); text-decoration: none; white-space: nowrap; }
 .inline-link:hover { text-decoration: underline; }
 
+.shots {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 16px 0 4px;
+  padding: 0;
+}
+.shots a { display: block; text-decoration: none; font-size: 13px; font-weight: 700; color: var(--accent); }
+.shots img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top left;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+  margin-bottom: 8px;
+  transition: transform .3s var(--ease);
+}
+.shots a:hover img { transform: translateY(-3px); }
+
 .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; padding: 0; }
 .tags li {
   padding: 4px 12px;
@@ -317,6 +339,21 @@ main { position: relative; z-index: 1; }
 }
 .wordmarks li:hover { color: var(--ink); }
 
+/* Talks & writing */
+.talks { list-style: none; margin: 0; padding: 0; }
+.talks li { display: grid; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.talks li:first-child { padding-top: 0; }
+.talk-when { font-size: 14px; font-weight: 700; color: var(--muted); }
+.talk-title { font-size: clamp(19px, 1.7vw, 24px); font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; }
+.talk-what { color: #3a3a3a; font-size: 16px; max-width: 56ch; }
+.talks .work-link { margin-top: 2px; justify-self: start; }
+.articles { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 28px; }
+.articles li { break-inside: avoid; padding: 0 0 12px; }
+.articles a { font-weight: 600; font-size: 16px; line-height: 1.35; text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .3s var(--ease); }
+.articles a::after { content: " ↗"; color: var(--accent); }
+.articles a:hover { background-size: 100% 1px; }
+.teach { margin: 0; font-size: 17px; color: #3a3a3a; max-width: 56ch; }
+
 /* About */
 .lead { margin: -8px 0 40px; font-size: 19px; color: #3a3a3a; max-width: 52ch; }
 .stack {
@@ -349,6 +386,16 @@ main { position: relative; z-index: 1; }
 }
 .fact-k { font-size: 44px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
 .fact-v { font-size: 17px; color: #3a3a3a; }
+.card--quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+  background: var(--ink);
+  color: #fff;
+}
+.card--quote p { margin: 0; font-size: 21px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; }
+.card--quote cite { font-style: normal; font-size: 14px; color: #bdbdbd; }
 .stack-next {
   margin-top: 24px;
   padding: 8px 0;
@@ -462,6 +509,8 @@ main { position: relative; z-index: 1; }
   .hero-meta { margin-top: 28px; }
   .scroll-cue { display: none; }
   .work-body { padding-left: 0; }
+  .shots { grid-template-columns: 1fr 1fr; }
+  .articles { columns: 1; }
   .timeline li { grid-template-columns: 1fr; }
   .tl-year { grid-row: auto; padding-top: 0; }
   .stack { margin: 0 auto; }

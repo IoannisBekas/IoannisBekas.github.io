@@ -88,8 +88,10 @@
     let order = [...stack.children];
     const layout = () => {
       order.forEach((card, i) => {
+        // Cards past the third are hidden; capping the offset keeps them from widening the page on phones.
+        const d = Math.min(i, 3);
         card.style.zIndex = String(order.length - i);
-        card.style.transform = `translate(${i * 7}px, ${i * 7}px) rotate(${i === 0 ? 0 : (i % 2 ? 3 : -3) * Math.min(i, 2)}deg)`;
+        card.style.transform = `translate(${d * 7}px, ${d * 7}px) rotate(${i === 0 ? 0 : (i % 2 ? 3 : -3) * Math.min(i, 2)}deg)`;
         card.style.opacity = i > 3 ? '0' : '1';
         card.classList.toggle('is-top', i === 0);
       });

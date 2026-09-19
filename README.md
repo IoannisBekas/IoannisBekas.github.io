@@ -14,6 +14,9 @@ index.html  404.html  styles.css  main.js  media/
 `assets/` holds the Higgsfield source material (≈217 MB of masters, keyframes, raw clips). Keep it, but don't upload it.
 GitHub Pages, Netlify and Vercel all serve `404.html` automatically.
 
+Content comes from the CV, the Google Site (sites.google.com/view/bekasioannis) and the BI Solutions site:
+talks, articles, Power BI case studies (screenshots in `media/img/dash_*.webp`), review quotes and the booking link.
+
 ## How the scenes work
 
 - `media/video/sceneN.mp4` (1920×1080) and `sceneN_m.mp4` (720px, left-cropped for phones) are played once when
@@ -27,6 +30,7 @@ GitHub Pages, Netlify and Vercel all serve `404.html` automatically.
 | Hero | walks in, waves |
 | Work | opens laptop, types |
 | Journey | leans in, hand on chin |
+| Talks (`scene6`) | speaks into a mic, presents toward the text |
 | About | sips coffee, thumbs-up |
 | Contact | sunglasses on, points at the contact details |
 
